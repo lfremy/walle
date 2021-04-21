@@ -1,0 +1,360 @@
+
+*{margin: 0;
+padding:0;
+box-sizing: border-box;
+}
+
+Html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family:'Roboto', sans-serif;
+}
+
+section{
+/* border: 4px solid red; */
+margin-bottom: 70px;
+}
+
+/* div,
+header,
+nav,
+footer,
+form{ */
+/* border: 3px solid green; */
+/* } */
+
+.flex{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.colonne{
+    flex-direction: column;
+}
+
+/* CLAMP() permet d'adapter la taille des textes à la taille de l'ecran avec une valeur max (site initial) une valeur min(ecran telephone) et une valeur relative entre les deux  */
+h1{
+font-weight: 900;
+text-align : center;    
+font-size: clamp(64px, 10vw, 96px);
+color: #424242;
+}
+
+
+/* WALL-E */
+#Wall-e {
+background: url('IMAGES/wall-e.png') no-repeat center/ cover;
+min-height: 721px;
+height: auto;
+
+/* width: 1442px;
+opacity: 0.6; */
+}
+
+header{
+width: min(1198px, 92%);
+margin: 0 auto;
+padding-top: 25px;
+}
+
+.menu a{
+font-size: 24px;
+color: #FFFFFF;
+text-decoration: none;
+margin-left: 50px;
+}
+
+.burger{
+    display : none;
+}
+
+
+    /* si j'utilise des span  qui sont des éléments inline et pas elements block je dois ajouter display: block pour qu'elles aparaissent */
+
+.walle-container{
+    margin:130px auto 0;
+    width: min(930px, 92%);
+    align-items: flex-end;
+    gap:40px;
+}
+
+.walle-container H1{
+    font-size: clamp(64px, 10vw,110px);
+    color: #FFFFFF;
+}
+
+.icon-container
+{
+gap:30px;
+}
+
+.icon {
+width: 132px;
+height: 132px;
+border-radius: 50%;
+background: #FFFFFF;
+justify-content: center;
+}
+
+/* Eve */
+article{
+width: min(368px, 92%);
+}
+
+.eve-container{
+    justify-content: center;
+    gap: 100px;
+}
+
+h2{
+font-weight: 900;
+font-size: clamp(24px, 10vw,36px);
+color: #2C9ED7;
+margin-bottom: 10px;
+}
+
+p{
+font-weight: 300;
+font-size: clamp(16px, 10vw,18px);
+color: #424242;
+}
+
+span{
+    font-weight: 900;
+    color: #2C9ED7;
+}
+    /* MCCREA */
+
+#mcCrea{
+    background: radial-gradient(50% 50% at 50% 50%, rgba(239, 239, 239, 0.1) 0%, rgba(72, 57, 112, 0.1) 100%);
+}
+
+.mccrea-container{
+   min-height: 483.15px;
+   height: auto;
+   width: min(1198px, 92%);
+   margin : 0 auto;
+   margin-bottom: 25px;
+}
+
+.carte{
+    background: #483970;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.25);
+    width: 250px;
+    height: 400px;
+}
+
+h3{
+    font-weight: 900;
+    font-size: 48px;
+    color: #FFFFFF;
+    margin-top: 30px;
+}
+
+.carte1{
+    background: #C9868E;
+    align-self: flex-end;
+}
+
+.carte3{
+    background: #C26C5C;
+    align-self: flex-start;
+}
+
+/* CONTACT */
+
+form{
+    margin-top: 50px;
+    gap: 20px;
+    margin-bottom : 30px;
+}
+
+form > * {
+    width: min(600px, 92%);
+    height: 60px;
+border-radius: 6px;
+background: #EAEAEA;
+padding: 15px 30px;
+font-size: clamp(18px, 4vw, 24px);
+color: #828282;
+border :none;
+font-family:'roboto', sans-serif;
+}
+textarea {
+    height: 180px;
+}
+
+form > *:last-child {
+width: 210px;
+height: 56px;
+background: #1E3581;
+box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+border-radius: 47px;
+font-weight: 900;
+font-size: 24px;
+color: #FFFFFF;
+}
+
+/* Jour du Responsive CSS pour que mon site soit responsive à la version mobile */
+/* Fait pas jonathn */
+
+@media (max-width: 890px) {
+    /* MCCRA */
+
+    /* #mccrea=container3 */
+    #mccrea{
+        background: none;
+    }
+    /* .mccrea-container=captain*/
+   .mccrea-container{
+       flex-direction: column;
+       width: 100%; 
+   } 
+   /* .mccrea-container div = toutes les div de captain (captain1,2,3) */
+   .mccrea-container div{
+       width:100%;
+       height: auto;
+       border:none;
+       box-shadow: none;
+   }
+  h3{
+      margin-top: 10px;
+  }
+
+  /* EVE */
+  .eve-container{
+      flex-direction: column-reverse;
+      gap: 40px;
+  }
+
+}
+
+/* MEDIA QUERIES */
+@media (max-width:700px) {
+.icon-container {
+    flex-direction: column;
+}
+.walle-container {
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 65px;
+    margin-top: 0;
+    padding-top: 100px;
+}
+
+#mcCrea,
+#Eve, #contact {
+    padding-top: 100px;
+}
+
+.icon{
+    width: 118px;
+    height: 118px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+.burger{
+    display: block;
+    cursor: pointer;
+}
+.burger div {
+    margin: 6px 0;
+    width: 40px;
+    height: 5px;
+    background-color: white;
+    border-radius: 54px;
+    display: block;
+    transition: .5s;
+    }
+
+.burger-cross div:first-child { transform: rotate(45deg) translate(7px, 8px);
+}
+
+.burger-cross div:last-child {
+    transform: rotate(-45deg) translate(7px, -8px);
+}
+
+.burger-cross div:nth-child(2) {
+opacity: 0;
+}
+
+.burger, 
+header > a {
+    background: #344892;
+    padding: 10px;
+    z-index: 1;
+}
+
+header{ position: fixed;
+    top: 0;
+    left: 0;
+    right :0;
+}
+
+.menu {
+ position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background:#344892;
+        flex-direction: column;
+        justify-content: center;
+        gap:50px;
+        transform: translateX(100%);
+    transition:0.5s;
+
+
+}
+
+.menu-open{
+transform: translateX(0);
+}
+
+.menu a {
+    margin-left:0;
+}
+
+
+/* images */
+img{
+    display: block;
+    max-width: 100%;
+}
+}
+/* MENU BURGER *//*  "mes essais" voir correction plus haut
+
+@media (max-width:1000px){
+    nav > a { width: 70%;
+    }
+} */
+
+/* @media (max-width:700px){
+    boby{
+        overflow-x: hidden;
+    } */
+    /* nav > a {
+gap: 30px;
+        right: 0;
+        top: 0;
+        height: 722px;
+        width: 375px;
+        background-color: #344892;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+header{
+    width: 100%;
+    margin: 0;
+    padding-top: 0;
+}
